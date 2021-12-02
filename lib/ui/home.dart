@@ -63,9 +63,9 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  indicator(ConstantColors.cardColor, 'Completed'),
-                  indicator(ConstantColors.queueColor2, 'To-Do'),
-                  indicator(ConstantColors.endSession, 'In-Progress'),
+                  indicator(ConstantColors.completed, 'Completed'),
+                  indicator(ConstantColors.todo, 'To-Do'),
+                  indicator(ConstantColors.inProgress, 'In-Progress'),
                 ],
               ),
             ),
@@ -92,12 +92,12 @@ class _HomePageState extends State<HomePage> {
                                       color:
                                           taskList.tasks![index].isCompleted ==
                                                   1
-                                              ? ConstantColors.cardColor
+                                              ? ConstantColors.completed
                                               : (taskList.tasks![index]
                                                           .isCompleted ==
                                                       2)
-                                                  ? ConstantColors.endSession
-                                                  : ConstantColors.queueColor2,
+                                                  ? ConstantColors.inProgress
+                                                  : ConstantColors.todo,
                                       borderRadius: BorderRadius.circular(10),
                                       elevation: 1,
                                       child: ListTile(
